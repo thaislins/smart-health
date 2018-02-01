@@ -10,8 +10,8 @@ page-home {
 }
 
 .home-item canvas {
-    width: 200px;
-    height: 100px;
+    width: 12.5em;
+    height: 6.250em; 
     margin: 0;
 }
 
@@ -37,14 +37,21 @@ page-home {
     margin: auto;
 }
 
+.ecginfo {
+    border-right: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.ecginfo-right {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+
 .card-heartrate {
     width: 89%;
     height: 40%;
     margin-top: 1.250em;
     margin-left: 1.6em;
-}
-
-.ecg-info {
-    text-align: center;
 }
 

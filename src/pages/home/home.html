@@ -7,34 +7,42 @@
 <ion-content padding>
 
   <ion-item class="home-item" no-lines>
-    <ion-item class="circle"><canvas #barCanvas2></canvas></ion-item>
+    <ion-item class="circle"><canvas #hrCanvas></canvas></ion-item>
     <h1>81 <ion-icon name="heart-outline"></ion-icon></h1>
     <h3>bpm</h3>
   </ion-item>
 
   <ion-grid>
     <ion-row>
-      <ion-col width-50>
-        <ion-card class="ecg-info">
-          <img src="assets/img/card-saopaolo.png"/>
-        </ion-card>
+      <ion-col width-50 class="ecginfo">
+        <img src="assets/img/card-amsterdam.png"/>
+        <div class="card-title"><ion-icon name="git-merge"></ion-icon> SPO2</div>
+        <h1>98</h1>
       </ion-col>
-      <ion-col width-50>
-        <ion-card class="ecg-info">
-          <img src="assets/img/card-amsterdam.png"/>
-          <div class="card-title">  <ion-icon name="git-merge"></ion-icon> SPO2</div>
-          <h1>98</h1>
-        </ion-card>
+      <ion-col width-50 class="ecginfo">
+        <img src="assets/img/card-amsterdam.png"/>
+        <div class="card-title"><ion-icon name="git-merge"></ion-icon> DP</div>
+        <h1>2</h1>
+      </ion-col>
+      <ion-col width-50 class="ecginfo">
+        <img src="assets/img/card-amsterdam.png"/>
+        <div class="card-title"><ion-icon name="git-merge"></ion-icon> MP</div>
+        <h1>3</h1>
+      </ion-col>
+      <ion-col width-50 class="ecginfo-right">
+        <img src="assets/img/card-amsterdam.png"/>
+        <div class="card-title"><ion-icon name="git-merge"></ion-icon> SP</div>
+        <h1>4</h1>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <ion-card class="card-heartrate">
     <ion-card-header>
-      HeartRate 
+      Respiratory Rate 
     </ion-card-header>
     <ion-card-content>
-      <canvas #barCanvas1></canvas>
+      <canvas #rrCanvas></canvas>
     </ion-card-content>
   </ion-card>
 
