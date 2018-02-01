@@ -5,19 +5,38 @@
 </ion-header>
 
 <ion-content padding>
-<ion-list>
 
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text" value=""></ion-input>
+  <ion-item class="home-item" no-lines>
+    <ion-item class="circle"><canvas #barCanvas2></canvas></ion-item>
+    <h1>81 <ion-icon name="heart-outline"></ion-icon></h1>
+    <h3>bpm</h3>
   </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <ion-card class="ecg-info">
+          <img src="assets/img/card-saopaolo.png"/>
+        </ion-card>
+      </ion-col>
+      <ion-col width-50>
+        <ion-card class="ecg-info">
+          <img src="assets/img/card-amsterdam.png"/>
+          <div class="card-title">  <ion-icon name="git-merge"></ion-icon> SPO2</div>
+          <h1>98</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <button ion-button color="light">Sign In</button>
+  <ion-card class="card-heartrate">
+    <ion-card-header>
+      HeartRate 
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas1></canvas>
+    </ion-card-content>
+  </ion-card>
 
-</ion-list>
+
 </ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      johndoe
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="profile-content">
+
+  <ion-item class="profile-item" no-lines>
+    <ion-avatar center class="avatar">
+      <img src="../assets/imgs/marty-avatar.png">
+    </ion-avatar>
+    <h2 class="username">johndoe</h2>
+  </ion-item>
+
+  <ion-card>
+
+    <ion-card-header>
+      More
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="medical" item-start></ion-icon>
+        Hospital
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="cog" item-start></ion-icon>
+        Settings
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button ion-item (click)="goToLoginPage()">
+        <ion-icon name="exit" item-start></ion-icon>
+        Log out
+      </button>
+    </ion-list>    
+  </ion-card>
+</ion-content>

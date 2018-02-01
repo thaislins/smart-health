@@ -1,3 +1,50 @@
 page-home {
 
 }
+
+.home-item {
+    text-align: center;
+    background: linear-gradient(-90deg, #f09e68, #f9ad52);;
+    height: 50%;
+    color: rgba(255,255,255,0.7) ; 
+}
+
+.home-item canvas {
+    width: 200px;
+    height: 100px;
+    margin: 0;
+}
+
+.home-item h1 {
+    margin-top: 0.1em;
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+.home-item h3 {
+    font-size: 11pt;
+    margin-left: 3.8em;
+    margin-top: -0.9em;
+    font-weight: bold;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 150px;
+    background: rgba(255,255,255,0.2); 
+    margin: auto;
+}
+
+.card-heartrate {
+    width: 89%;
+    height: 40%;
+    margin-top: 1.250em;
+    margin-left: 1.6em;
+}
+
+.ecg-info {
+    text-align: center;
+}
+
