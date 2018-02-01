@@ -7,8 +7,10 @@
 <ion-content padding>
 
   <ion-item class="home-item" no-lines>
-    <ion-item class="circle"><canvas #hrCanvas></canvas></ion-item>
-    <h1>81 <ion-icon name="heart-outline"></ion-icon></h1>
+    <ion-item class="circle"></ion-item>
+    <canvas #hrCanvas></canvas>
+    <h1 #bpm>{{ bpm_value }}</h1>
+    <h1 class="heart-icon"><ion-icon name="heart-outline"></ion-icon></h1>
     <h3>bpm</h3>
   </ion-item>
 
