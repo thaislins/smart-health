@@ -30,21 +30,36 @@ export class HomePage {
 
             type: 'line',
             data: {
+                scaleLineColor: 'transparent',
                 labels: [1, 2, 3, 4, 5, 6, 7],
                 datasets: [{
+                    label: 'DD',
                     data: [12, 19, 3, 5, 2, 3, 40, 111, 309, 100],
 
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
                     borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1
                 }]
             },
-
             options: {
+                legend: { display: false },
                 scales: {
                     yAxes: [{
+                        display: false,
                         ticks: {
                             beginAtZero:true
+                        },
+                        gridLines: {
+                            display: false,
+                        }
+                    }],
+                    xAxes: [{
+                        display: false,
+                        ticks: {
+                            beginAtZero:true
+                        },
+                        gridLines: {
+                            display: false,
                         }
                     }]
                 }
