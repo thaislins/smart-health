@@ -30,7 +30,6 @@ export class HomePage {
 
             type: 'line',
             data: {
-                scaleLineColor: 'transparent',
                 labels: [1, 2, 3, 4, 5, 6, 7],
                 datasets: [{
                     label: 'DD',
@@ -76,13 +75,14 @@ export class HomePage {
                 datasets: [{
                     data: [12, 19, 3, 5, 2, 3, 40, 111, 309, 100],
 
-                    backgroundColor: 'rgba(255, 29, 111, 0.4)',
-                    borderColor: 'rgba(255,50,132,1)',
+                    backgroundColor: 'rgba(129, 199, 132, 0.4)',
+                    borderColor: 'rgba(102,187,106,1)',
                     borderWidth: 1
                 }]
             },
 
             options: {
+                legend: { display: false }, 
                 scales: {
                     yAxes: [{
                         ticks: {

@@ -9,8 +9,8 @@
   <ion-item class="home-item" no-lines>
     <ion-item class="circle"></ion-item>
     <canvas #hrCanvas></canvas>
-    <h1 #bpm>{{ bpm_value }}</h1>
     <h1 class="heart-icon"><ion-icon name="heart-outline"></ion-icon></h1>
+    <h1 #bpm>{{ bpm_value }}</h1>
     <h3>bpm</h3>
   </ion-item>
 
@@ -23,17 +23,17 @@
       </ion-col>
       <ion-col width-50 class="ecginfo">
         <img src="assets/img/card-amsterdam.png"/>
-        <div class="card-title"><ion-icon name="git-merge"></ion-icon> DP</div>
+        <div class="card-title"><ion-icon name="thermometer"></ion-icon> Temperature</div>
         <h1>2</h1>
       </ion-col>
-      <ion-col width-50 class="ecginfo">
+<!--       <ion-col width-50 class="ecginfo">
         <img src="assets/img/card-amsterdam.png"/>
         <div class="card-title"><ion-icon name="git-merge"></ion-icon> MP</div>
         <h1>3</h1>
-      </ion-col>
+      </ion-col> -->
       <ion-col width-50 class="ecginfo-right">
         <img src="assets/img/card-amsterdam.png"/>
-        <div class="card-title"><ion-icon name="git-merge"></ion-icon> SP</div>
+        <div class="card-title"><ion-icon name="help"></ion-icon> ---</div>
         <h1>4</h1>
       </ion-col>
     </ion-row>
@@ -41,7 +41,7 @@
 
   <ion-card class="card-heartrate">
     <ion-card-header>
-      Respiratory Rate 
+      Oxygen Saturation 
     </ion-card-header>
     <ion-card-content>
       <canvas #rrCanvas></canvas>
