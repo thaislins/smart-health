@@ -2,10 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { Subscription } from "rxjs/Subscription";
+import { EcgProvider } from "../../providers/ecg/ecg"
 
 @Component({
     selector: 'page-home',
-    templateUrl: 'home.html'
+    templateUrl: 'home.html',
+    providers: [
+        EcgProvider
+    ]
 })
 export class HomePage {
 
@@ -18,13 +22,20 @@ export class HomePage {
     maxResults = 5;
     count = 0;
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, private ecgProvider: EcgProvider) {
         setInterval(() => {this.addChartData(this.rrChart, this.count++, Math.floor(Math.random()*20 + 5))},1000);
         setInterval(() => {this.addChartData(this.hrChart, this.count++, Math.floor(Math.random()*20 + 5))},1000);
         setInterval(() => {this.modifyBPM(Math.floor(Math.random()*110 + 5))},1000);
     }
 
     ionViewDidLoad() {
+
+        this.ecgProvider.getLatestData().subscribe(
+            data => {
+                console.log(data);
+            }, error => {
+                console.log(error);
+            });
 
         this.hrChart = new Chart(this.hrCanvas.nativeElement, {
 
@@ -108,7 +119,6 @@ export class HomePage {
     }
 
     modifyBPM(data) {
-        console.log(data);
         this.bpm_value = data;
     }
 }

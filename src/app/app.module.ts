@@ -9,8 +9,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { LoginPageModule } from '../pages/login/login.module';
+import { EcgProvider } from '../providers/ecg/ecg';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { LoginPageModule } from '../pages/login/login.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FeedPageModule,
-    LoginPageModule
+    LoginPageModule,
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +41,8 @@ import { LoginPageModule } from '../pages/login/login.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EcgProvider
   ]
 })
 export class AppModule {}
