@@ -13,7 +13,12 @@ import { EcgProvider } from "../../providers/ecg/ecg"
 })
 export class HomePage {
 
-    public bpm_value: number;
+    public bpm_value:number ;
+    public spo2_value:number;
+    public temp_value:number; 
+    public hr_data = new Array<any>();
+    public spo2_data = new Array<any>();
+    public temp_data = new Array<any>();
     @ViewChild('hrCanvas') hrCanvas;
     @ViewChild('rrCanvas') rrCanvas; 
 
@@ -23,22 +28,29 @@ export class HomePage {
     count = 0;
 
     constructor(public navCtrl: NavController, private ecgProvider: EcgProvider) {
+        var index = 0;
         setInterval(() => {this.addChartData(this.rrChart, this.count++, Math.floor(Math.random()*20 + 5))},1000);
         setInterval(() => {this.addChartData(this.hrChart, this.count++, Math.floor(Math.random()*20 + 5))},1000);
-        setInterval(() => {this.modifyBPM(Math.floor(Math.random()*110 + 5))},1000);
+        setInterval(() => {this.modifyBPM(this.hr_data[index % this.hr_data.length])},1000);
+        setInterval(() => {this.modifySPO2(this.spo2_data[index % this.hr_data.length])},1000);
+        setInterval(() => {this.modifyTemp(this.temp_data[index++ % this.temp_data.length])},1000);
     }
 
     ionViewDidLoad() {
 
         this.ecgProvider.getLatestData().subscribe(
             data => {
-                console.log(data);
+                for (var i = 6000; i >= 0; i--) {
+                    this.hr_data.push(data[i].hr);
+                    this.spo2_data.push(data[i].spo2);
+                    this.temp_data.push(data[i].temp);
+                }
             }, error => {
                 console.log(error);
             });
 
         this.hrChart = new Chart(this.hrCanvas.nativeElement, {
-
+ 
             type: 'line',
             data: {
                 labels: [1, 2, 3, 4, 5, 6, 7],
@@ -120,5 +132,13 @@ export class HomePage {
 
     modifyBPM(data) {
         this.bpm_value = data;
+    }
+
+    modifySPO2(data) {
+        this.spo2_value = data;
+    }
+
+    modifyTemp(data) {
+        this.temp_value = data;
     }
 }

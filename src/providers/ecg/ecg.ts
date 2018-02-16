@@ -10,8 +10,7 @@ import { Injectable } from '@angular/core';
   @Injectable()
   export class EcgProvider {
 
-      constructor(public http: HttpClient) {
-        console.log('Hello EcgProvider Provider');
+    constructor(public http: HttpClient) {
     }
 
     getLatestData() {
